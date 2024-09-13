@@ -28,7 +28,7 @@
         </div>
         
         <div hx-get="/tasksToday" hx-trigger="load, refreshTasks from:body" hx-swap="innerHTML" hx-target="#taskContent" class="mt-4">
-          <div id="taskContent" class="flex flex-row justify-between">
+          <div id="taskContent" class="flex flex-col justify-between overflow-y-scroll max-h-96">
             
           </div>
         

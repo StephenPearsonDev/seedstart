@@ -1,8 +1,10 @@
-<div th:each="task : ${tasks}" class="flex flex-col justify-between">
-  <div class="font-semibold" th:text="Task: + ${task.name}">
+<div th:each="task : ${tasks}" class="flex justify-between">
+  <div class="font-semibold" th:text="'Task: ' + ${task.taskContent}">
+
     
   </div>
-  <div hx-delete="/deleteTask" class="hover:cursor-pointer rounded w-12 h-12 hover:bg-green-200" hx-swap="none" th:attr="hx-vals='{'taskId' : '[({$task.id})]'}'">
+  <div hx-delete="/deleteTask" class="hover:cursor-pointer rounded w-12 h-12 hover:bg-green-200" hx-swap="none" 
+  th:hx-vals="|{'taskId': ${task.id}}|">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
     </svg>
